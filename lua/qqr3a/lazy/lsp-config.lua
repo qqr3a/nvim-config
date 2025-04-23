@@ -3,18 +3,6 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	{
-		"ms-jpq/coq_nvim",
-		dependencies = {
-			"ms-jpq/coq.artifacts", -- prebuilt snippets, language models, etc.
-			"ms-jpq/coq.thirdparty", -- enables LSP / ripgrep / etc. as completion sources
-		},
-		lazy = false,
-		config = function()
-			clients = { lsp = { auto_start = true } }
-		end,
-	},
-
-	{
 		"williamboman/mason.nvim",
 		lazy = false,
 		config = function()
@@ -32,9 +20,7 @@ return {
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
-			local coq = require("coq")
-			local capabilities = coq.lsp_ensure_capabilities(vim.lsp.protocol.make_client_capabilities())
-
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
