@@ -32,6 +32,18 @@ return {
 				capabilities = capabilities,
 			})
 
+			lspconfig.ltex.setup({
+				capabilities = capabilities,
+				filetypes = { "text", "markdown" },
+				settings = {
+					ltex = {
+						language = {"de-DE", "en-GB"}, -- or "en-GB"
+						diagnosticSeverity = "information",
+						additionalRules = { motherTongue = "en" },
+					},
+				},
+			})
+
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
