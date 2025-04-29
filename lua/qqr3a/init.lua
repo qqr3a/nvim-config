@@ -8,3 +8,4 @@ vim.opt.relativenumber = true
 
 require("qqr3a.remap")
 require("qqr3a.lazy_init")
+vim.cmd.colorscheme("rose-pine")

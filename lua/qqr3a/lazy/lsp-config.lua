@@ -37,7 +37,7 @@ return {
 				filetypes = { "text", "markdown" },
 				settings = {
 					ltex = {
-						language = {"de-DE", "en-GB"}, -- or "en-GB"
+						language = {"en-GB"},
 						diagnosticSeverity = "information",
 						additionalRules = { motherTongue = "en" },
 					},
