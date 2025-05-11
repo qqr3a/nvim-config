@@ -8,7 +8,7 @@ return {
             "nvim-lua/plenary.nvim",
             "andrew-george/telescope-themes",
         },
-        --lazy = false,
+        lazy = false,
 
         config = function()
             require("telescope").setup({})
@@ -28,6 +28,7 @@ return {
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
+        lazy = false,
         config = function()
             require("telescope").setup({
                 extensions = {
